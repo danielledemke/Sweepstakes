@@ -14,7 +14,7 @@ namespace SweepstakesProject
         //constructor
         public SweepstakesQueueManager()
         {
-
+            queue = new Queue<Sweepstakes>();
         }
 
 

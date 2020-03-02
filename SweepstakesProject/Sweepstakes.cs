@@ -23,6 +23,7 @@ namespace SweepstakesProject
         public Sweepstakes(string name)
         {
             this.name = name;
+            contestants = new Dictionary<int, Contestant>();
         }
 
         //member methods
@@ -30,10 +31,14 @@ namespace SweepstakesProject
         public void RegisterContestant()
         {
            Contestant contestant = new Contestant();
-           contestant.firstName = UserInterface.GetUserInputFor(contestant.firstName);
-           contestant.lastName = UserInterface.GetUserInputFor(contestant.lastName);
-           contestant.emailAddress = UserInterface.GetUserInputFor(contestant.emailAddress);
-           string registration = UserInterface.GetUserInputFor(contestant.registrationNumber.ToString());
+            string firstName = "First Name";
+           contestant.firstName = UserInterface.GetUserInputFor(firstName);
+            string lastName = "Last Name";
+            contestant.lastName = UserInterface.GetUserInputFor(lastName);
+            string email = "Email Address";
+            contestant.emailAddress = UserInterface.GetUserInputFor(email);
+            string regNumber = "Registration Number";
+           string registration = UserInterface.GetUserInputFor(regNumber);
            contestant.registrationNumber = int.Parse(registration);
            contestants.Add(contestant.registrationNumber, contestant);
         }

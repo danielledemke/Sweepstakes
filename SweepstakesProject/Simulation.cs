@@ -11,7 +11,7 @@ namespace SweepstakesProject
         //constructor
         public Simulation()
         {
-
+            CreateMarketingFirmWithManager();
         }
         //member methods
         public MarketingFirm CreateMarketingFirmWithManager() ///factory design pattern; using user input to determine what type of manager object to use/create
