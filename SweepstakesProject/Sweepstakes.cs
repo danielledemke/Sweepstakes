@@ -27,14 +27,15 @@ namespace SweepstakesProject
 
         //member methods
         
-        public void RegisterContestant(Contestant contestant)
+        public void RegisterContestant()
         {
-            contestant = new Contestant();
-            UserInterface.GetUserInputFor(contestant.firstName);
-            UserInterface.GetUserInputFor(contestant.lastName);
-            UserInterface.GetUserInputFor(contestant.emailAddress);
-            UserInterface.GetUserInputFor(contestant.registrationNumber.ToString());
-            contestants.Add(contestant.registrationNumber, contestant);
+           Contestant contestant = new Contestant();
+           contestant.firstName = UserInterface.GetUserInputFor(contestant.firstName);
+           contestant.lastName = UserInterface.GetUserInputFor(contestant.lastName);
+           contestant.emailAddress = UserInterface.GetUserInputFor(contestant.emailAddress);
+           string registration = UserInterface.GetUserInputFor(contestant.registrationNumber.ToString());
+           contestant.registrationNumber = int.Parse(registration);
+           contestants.Add(contestant.registrationNumber, contestant);
         }
         public Contestant PickWinner()
         {
@@ -42,8 +43,6 @@ namespace SweepstakesProject
             Random random = new Random();
             int winningRegistrationNumber = registrationNumbers[random.Next(registrationNumbers.Count)];
             return contestants[winningRegistrationNumber];
-
-
         }
         public void PrintContestantInfo(Contestant contestant)
         {

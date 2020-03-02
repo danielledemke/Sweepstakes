@@ -20,12 +20,13 @@ namespace SweepstakesProject
         //member methods
         public Sweepstakes GetSweepstakes()
         {
-            throw new NotImplementedException();
+            Sweepstakes sweepstakes = stack.Pop();
+            return sweepstakes;
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            stack.Push(sweepstakes);
         }
     }
 }

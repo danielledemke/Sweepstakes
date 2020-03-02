@@ -21,12 +21,13 @@ namespace SweepstakesProject
         //member methods
         public Sweepstakes GetSweepstakes()
         {
-            throw new NotImplementedException();
+            Sweepstakes sweepstakes = queue.Dequeue();
+            return sweepstakes;
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            queue.Enqueue(sweepstakes);
         }
     }
 }

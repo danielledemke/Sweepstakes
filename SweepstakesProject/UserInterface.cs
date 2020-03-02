@@ -14,5 +14,11 @@ namespace SweepstakesProject
             string input = Console.ReadLine();
             return input;
         }
+        public static string GetManagerType()
+        {
+            Console.WriteLine("Which data structure would you like to use for storing the Sweepstakes: Queue or Stack? \n");
+            string userEntry = Console.ReadLine();
+            return userEntry;
+        }
     }
 }

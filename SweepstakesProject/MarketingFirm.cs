@@ -12,7 +12,7 @@ namespace SweepstakesProject
         private ISweepstakesManager manager;
 
         //constructor
-        public MarketingFirm(ISweepstakesManager manager)
+        public MarketingFirm(ISweepstakesManager manager) //dependency injection
         {
             this.manager = manager;
         }
