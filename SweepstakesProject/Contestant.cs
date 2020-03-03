@@ -13,6 +13,19 @@ namespace SweepstakesProject
         public string lastName;
         public string emailAddress;
         public int registrationNumber;
+        private bool isWinner;
+
+        public bool IsWinner
+        {
+            get
+            {
+                return isWinner;
+            }
+            set
+            {
+                isWinner = value;
+            }
+        }
 
         //constructor
         public Contestant()

@@ -12,18 +12,20 @@ namespace SweepstakesProject
         {
             Simulation simulation = new Simulation();
             MarketingFirm marketingFirmOne = simulation.CreateMarketingFirmWithManager();
-            Sweepstakes winCruise = marketingFirmOne.CreateSweepstake();
+            //Sweepstakes winCruise = marketingFirmOne.CreateSweepstake();
             Sweepstakes winNewHouse = marketingFirmOne.CreateSweepstake();
-            marketingFirmOne.Manager.InsertSweepstakes(winCruise);
+            //marketingFirmOne.Manager.InsertSweepstakes(winCruise);
             marketingFirmOne.Manager.InsertSweepstakes(winNewHouse);
-            winCruise.RegisterContestant();
+            //winCruise.RegisterContestant();
             winNewHouse.RegisterContestant();
-            winCruise.RegisterContestant();
+            //winCruise.RegisterContestant();
             winNewHouse.RegisterContestant();
-            Contestant winner = winCruise.PickWinner();
-            Contestant otherWinner = winNewHouse.PickWinner();
-            Console.WriteLine(winner.registrationNumber);
-            Console.WriteLine(otherWinner.registrationNumber);
+            //winNewHouse.RegisterContestant();
+            //winNewHouse.RegisterContestant();
+            //Contestant winner = winCruise.PickWinner();
+            //Contestant otherWinner = winNewHouse.PickWinner();
+            //Console.WriteLine(winner.registrationNumber);
+            winNewHouse.Notify();
 
 
             Console.ReadLine();

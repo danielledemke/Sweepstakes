@@ -11,6 +11,7 @@ namespace SweepstakesProject
         //member variables
         private Dictionary<int, Contestant> contestants;
         private string name;
+        private Contestant winner;
         
         public string Name
         {
@@ -31,14 +32,11 @@ namespace SweepstakesProject
         public void RegisterContestant()
         {
            Contestant contestant = new Contestant();
-            string firstName = "First Name";
-           contestant.firstName = UserInterface.GetUserInputFor(firstName);
-            string lastName = "Last Name";
-            contestant.lastName = UserInterface.GetUserInputFor(lastName);
-            string email = "Email Address";
-            contestant.emailAddress = UserInterface.GetUserInputFor(email);
-            string regNumber = "Registration Number";
-           string registration = UserInterface.GetUserInputFor(regNumber);
+           
+           contestant.firstName = UserInterface.GetUserInputFor("First Name");
+           contestant.lastName = UserInterface.GetUserInputFor("Last Name");
+           contestant.emailAddress = UserInterface.GetUserInputFor("Email Address");
+           string registration = UserInterface.GetUserInputFor("Registration Number");
            contestant.registrationNumber = int.Parse(registration);
            contestants.Add(contestant.registrationNumber, contestant);
         }
@@ -56,6 +54,26 @@ namespace SweepstakesProject
             Console.Write(contestant.emailAddress);
             Console.Write(contestant.registrationNumber);
         }
-
+        public void Notify()
+        {
+            SetWinnerBool();
+            List<Contestant> allContestants = new List<Contestant>(contestants.Values);
+            foreach (Contestant contestant in allContestants)
+            {
+                if(contestant.IsWinner == true)
+                {
+                    Console.WriteLine("Congratulations! You have won the {0} Sweepstakes!", name);
+                }
+                else
+                {
+                    Console.WriteLine("Congratulations to {0} {1} on winning the {2} Sweepstakes! Thank you for playing and visit our website for more Sweepstakes!", winner.firstName, winner.lastName, name);
+                }
+            }
+        }
+        public void SetWinnerBool()
+        {
+            winner = PickWinner();
+            winner.IsWinner = true;
+        }
     }
 }
