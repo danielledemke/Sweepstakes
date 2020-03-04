@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
 
 namespace SweepstakesProject
 {
@@ -12,6 +15,11 @@ namespace SweepstakesProject
         private Dictionary<int, Contestant> contestants;
         private string name;
         private Contestant winner;
+
+
+
+        
+        
         
         public string Name
         {
@@ -75,5 +83,6 @@ namespace SweepstakesProject
             winner = PickWinner();
             winner.IsWinner = true;
         }
+
     }
 }
